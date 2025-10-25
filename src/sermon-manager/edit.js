@@ -33,7 +33,7 @@ export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
 			{ __(
-				'Sermon Manager – hello from the editor!',
+				'Sermon Manager – Edit site!',
 				'sermon-manager'
 			) }
 		</p>

@@ -1,1 +1,51 @@
-.wp-block-create-block-sermon-manager{background-color:#21759b;color:#fff;padding:2px}
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/sermon-manager/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-create-block-sermon-manager {
+  background-color: #21759b;
+  color: #fff;
+  padding: 2px;
+}
+.sermons-container {
+  color: black;
+  background-color: #FFFFFF;
+  font-family: poppins, sans-serif;
+  padding: 60px 20px;
+}
+.sermon-posts-inner {
+  color: black;
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+.sermon-post {
+  padding: 30px;
+  border: 1px solid #C8D7D1;
+}
+.sermon-post > div {
+  min-height: 170px;
+  padding: 20px;
+  color: #FFFFFF;
+}
+.sermon-post > div > h2 {
+  font-size: 16px;
+  font-family: bold;
+  text-decoration: none;
+}
+.sermon-post h3 a {
+  font-size: 12px;
+  text-decoration: none;
+  pointer-events: none;
+}
+.hgi-video-01, .hgi-music-note-square-02 {
+  font-size: 30px;
+  padding: 10px;
+}
