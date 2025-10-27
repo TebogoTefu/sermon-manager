@@ -22,33 +22,31 @@ if ($query->have_posts()) :
                 while ($query->have_posts()) : $query->the_post();
                 $bg_image = get_the_post_thumbnail_url(get_the_ID(), 'large');
                     ?>
+
                     <div class="sermon-post">
-                        <div  style="background-image: url('<?php echo esc_url($bg_image); ?>');">
+                         <!-- style="background-image: url('<?php //echo esc_url($bg_image); ?>');" -->
+                        <div style="background-image: url('<?php echo esc_url($bg_image); ?>');">
                             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                            <!-- Thumbnail -->
-                            <?php
-                                // if ( has_post_thumbnail() ) { // Check if a featured image exists
-                                //     the_post_thumbnail( 'medium' ); // Display featured image with 'medium' size
-                                //     // You can also use 'thumbnail', 'large', 'full', or a custom size array (e.g., array(200, 200))
-                                //     }
-                            ?>
-                         
                         </div>
-                        <?php
-                            $terms = the_terms( get_the_ID(), 'preacher', 'Preacher: ', ', ' );
-                            if ($terms && !is_wp_error($terms)) :
-                                foreach ($terms as $term) :
-                                    // Output the term name (no link)
-                                    echo '<h3><a>' . $term->name . '</a></h3>';
-                                endforeach;
-                            endif;
-                        ?>
-                        <p><?php echo get_the_date('F j, Y'); ?></p> 
-                    
-                        <div class="media-links">
+
+                        <div>
+                            <?php
+                                $terms = the_terms( get_the_ID(), 'preacher', 'Preacher: ', ', ' );
+                                if ($terms && !is_wp_error($terms)) :
+                                    foreach ($terms as $term) :
+                                        // Output the term name (no link)
+                                        echo '<a>' . $term->name . '</a>';
+                                    endforeach;
+                                endif;
+                            ?>
+                            <p><?php echo get_the_date('F j, Y'); ?></p> 
+                        </div>   
+
+                        <div>
                             <a href="<?php the_permalink(); ?>"><i class="hgi hgi-stroke hgi-video-01"></i></a>
                             <a href="<?php the_permalink(); ?>"><i class="hgi hgi-stroke hgi-music-note-square-02"></i></a>
-                        </div>  
+                        </div> 
+                         
                     </div>
                     
                     <?php

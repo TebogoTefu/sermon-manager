@@ -16,32 +16,59 @@
   color: black;
   background-color: #FFFFFF;
   font-family: poppins, sans-serif;
-  padding: 60px 20px;
+  padding: 10px 5px;
 }
 .sermon-posts-inner {
-  color: black;
   max-width: 960px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
 .sermon-post {
-  padding: 30px;
+  padding: 10px;
   border: 1px solid #C8D7D1;
 }
-.sermon-post > div {
-  min-height: 170px;
-  padding: 20px;
+.sermon-post div:first-child {
+  position: relative;
+  min-height: 50px;
+  padding: 50px 20px;
   color: #FFFFFF;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  min-height: 15vh; /* Ensures the body always takes up at least the full viewport height */
+  margin: 0; /* Removes default body */
 }
-.sermon-post > div > h2 {
-  font-size: 16px;
+.sermon-post div:first-child::before {
+  content: ""; /* Essential for pseudo-elements */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 28, 51, 0.65); /* Black with 65% opacity */
+  z-index: 2; /* Ensures it's above the content */
+}
+.sermon-post div:first-child h2 a {
+  position: relative;
+  z-index: 10;
+  font-size: 18px;
   font-family: bold;
   text-decoration: none;
+  padding-top: 30px;
+  text-decoration: none;
+  line-height: 1.2;
 }
-.sermon-post h3 a {
-  font-size: 12px;
+.sermon-post div:nth-child(2) {
+  padding-top: 20px;
+}
+.sermon-post div:nth-child(2) a {
+  font-size: 14px;
   text-decoration: none;
   pointer-events: none;
 }
